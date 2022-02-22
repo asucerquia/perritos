@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=Staatliches&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/*  Declaro el grid*/
+
+.grid {
+    display: grid;
+    grid-template-areas: "header header header " "rotador rotador rotador" "main main main" "footer footer footer";
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 100px 400px auto 150px;
+}
+
+
+/* Declaro el contenedor */
+
+.contenedor {
+    width: 90%;
+    align-items: center;
+}
+
+
+/* Comienza el header */
+
+#header {
+    background: #f7f2ed;
+    width: 100%;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+}
+
+#header img {
+    width: 150px;
+}
+
+#header .contenedor {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+#nav {
+    font-family: 'Staatliches';
+    margin-left: 50px;
+    font-weight: 100;
+    color: #2d2d28;
+    font-size: 20px;
+}
+
+#nav a {
+    color: #2d2d28;
+    text-decoration: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+
+/* Comienza el rotador */
+
+#rotador {
+    background: #2D2D28;
+    grid-area: rotador;
+    display: flex;
+    background-image: url("../img/textura2.png");
+    overflow: hidden;
+}
+
+#rotador .titulo {
+    width: 500px;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 6vw;
+    color: #fbdf83;
+    line-height: 142px;
+    text-shadow: 0px 0px 7px #fbdf83;
+    font-family: 'Staatliches';
+}
+
+#hambur1 {
+    width: 460px;
+    margin-bottom: -76px;
+    transform: rotate( 338deg);
+}
+
+
+/* Animacion de la imagen */
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#rota {
+    width: 970px;
+    animation: spin 175s linear infinite;
+    position: absolute;
+    right: 0px;
+    animation: spin 175s linear infinite;
+}
+
+
+/* Comienza el  main */
+
+#main {
+    background: #2D2D28;
+    display: flex;
+    justify-content: center;
+    grid-area: main;
+}
+
+#main h2 {
+    font-family: 'Staatliches';
+    font-size: 80px;
+    color: #fdfef5;
+    display: inline-block;
+}
+
+#main p {
+    font-family: 'Staatliches';
+    font-size: 25px;
+    color: #fbdf83;
+    margin-bottom: 30px;
+}
+
+#main .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.productos {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont-texto {
+    grid-area: texto;
+}
+
+.cont-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 30px;
+}
+
+
+/* Comienza el footer */
+
+#footer {
+    background: chocolate;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Staatliches';
+    list-style: none;
+    padding: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Comienza la pagina menu */
+
+.menu img {
+    width: 300px;
+}
+
+
+/* este es el responsive */
+
+@media screen and (max-width: 768px) {
+    #main .contenedor {
+        width: 90%;
+    }
+    .productos img {
+        width: 160px;
+    }
+    .menu img {
+        width: 160px;
+    }
+    #rotador .titulo {
+        width: 500px;
+        font-size: 7vw;
+        color: #fbdf83;
+        line-height: 142px;
+    }
+}
