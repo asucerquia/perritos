@@ -1,2 +1,0 @@
-# perritos
-Proyecto de coderhouse
